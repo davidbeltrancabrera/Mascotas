@@ -1,0 +1,19 @@
+<resources>
+    <dimen name="nombre_de_contacto">33dp</dimen>
+    <dimen name="telefono_contacto">24dp</dimen>
+    <dimen name="topContacto">20dp</dimen>
+    <dimen name="lefttext">8dp</dimen>
+
+
+    <dimen name="elevacion_actionbar">4dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="corner_radius_cardview">4dp</dimen>
+    <dimen name="nombre_cardview">25sp</dimen>
+
+    <dimen name="width">80dp</dimen>
+    <dimen name="height">70dp</dimen>
+    <dimen name="top_mascota">20dp</dimen>
+    <dimen name="left_mascota">20dp</dimen>
+
+</resources>
