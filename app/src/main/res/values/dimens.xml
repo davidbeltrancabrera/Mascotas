@@ -16,4 +16,10 @@
     <dimen name="top_mascota">20dp</dimen>
     <dimen name="left_mascota">20dp</dimen>
 
+    <dimen name="dtvTitulo">30dp</dimen>
+
+    <dimen name="dtvDetalles">20dp</dimen>
+    <dimen name="top">10dp</dimen>
+    <dimen name="left">10dp</dimen>
+
 </resources>

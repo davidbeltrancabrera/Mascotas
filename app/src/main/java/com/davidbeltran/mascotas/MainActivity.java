@@ -1,66 +1,74 @@
 package com.davidbeltran.mascotas;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import androidx.appcompat.widget.Toolbar;
+import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.TextView;
 
+
+import com.davidbeltran.mascotas.adapter.MascotaAdaptador;
+import com.davidbeltran.mascotas.adapter.PageAdapter;
+import com.davidbeltran.mascotas.fragment.PerfilFragment;
+import com.davidbeltran.mascotas.fragment.RecyclerViewFragment;
+import com.davidbeltran.mascotas.pojo.Mascota;
+import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    ArrayList<Mascota> mascotas;
-    private RecyclerView listaMascotas;
+    private  Toolbar toolbar;
+    private TabLayout tabLayout;
+    private ViewPager viewPager;
+
+    private Toolbar myToolbar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Toolbar myToolbar = (Toolbar) findViewById(R.id.miActionBar);
+        myToolbar = (Toolbar) findViewById(R.id.miActionBar);
         setSupportActionBar(myToolbar);
 
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         TextView mTitle = (TextView) myToolbar.findViewById(R.id.toolbar_title);
+        setSupportActionBar(myToolbar);
 
-        listaMascotas = (RecyclerView) findViewById(R.id.rvMascotas);
+        //Fragments
+        toolbar = (Toolbar)  findViewById(R.id.toolbar);
+        tabLayout = (TabLayout)  findViewById(R.id.tablayout);
+        viewPager = (ViewPager)  findViewById(R.id.viewPager);
 
-        LinearLayoutManager llm = new LinearLayoutManager(this);
-        llm.setOrientation(LinearLayoutManager.VERTICAL);
+        setUpViewPager();
 
-        listaMascotas.setLayoutManager(llm);
-        inicializarListaMascotas();
-        inicializarAdaptador();
+       if (toolbar != null){
+            setSupportActionBar(toolbar);
+        }
 
 
     }
 
-    public void inicializarAdaptador(){
-        MascotaAdaptador adaptador = new MascotaAdaptador(mascotas);
-        listaMascotas.setAdapter(adaptador);
+    private ArrayList<Fragment> agregarFragments(){
+        ArrayList<Fragment> fragments = new ArrayList<>();
+        fragments.add(new RecyclerViewFragment());
+        fragments.add(new PerfilFragment());
+        return fragments;
     }
-    public void inicializarListaMascotas(){
-
-        mascotas = new ArrayList<Mascota>();
-
-        mascotas.add(new Mascota("Felipe", R.drawable.perro1,1));
-        mascotas.add(new Mascota("Mbape",R.drawable.perro2,2));
-        mascotas.add(new Mascota("Cachu",R.drawable.perro3,3));
-        mascotas.add(new Mascota("Scot",R.drawable.perro4,4));
-        mascotas.add(new Mascota("Zorro",R.drawable.perro5,5));
-        mascotas.add(new Mascota("Homero",R.drawable.perro6,6));
+    private void setUpViewPager(){
+        viewPager.setAdapter(new PageAdapter(getSupportFragmentManager(),agregarFragments()));
+        tabLayout.setupWithViewPager(viewPager);
+        tabLayout.getTabAt(0).setIcon(R.drawable.casadog);
+        tabLayout.getTabAt(1).setIcon(R.drawable.perfildog);
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -71,13 +79,21 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.action_settings:
-                // User chose the "Settings" item, show the app settings UI...
+
+            case R.id.action_about:
+                Intent intent2 = new Intent(this, AboutActivity.class);
+                startActivity(intent2);
+                return true;
+
+            case R.id.action_contacto:
+                Intent intent1 = new Intent(this, ContactoActivity.class);
+                startActivity(intent1);
                 return true;
 
             case R.id.action_favorite:
                 Intent intent = new Intent(this, MainActivity2.class);
                 startActivity(intent);
+                return true;
 
             default:
                 // If we got here, the user's action was not recognized.

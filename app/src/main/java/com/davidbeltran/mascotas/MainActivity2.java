@@ -10,6 +10,9 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.widget.TextView;
 
+import com.davidbeltran.mascotas.adapter.MascotaAdaptador;
+import com.davidbeltran.mascotas.pojo.Mascota;
+
 import java.util.ArrayList;
 
 public class MainActivity2 extends AppCompatActivity {
