@@ -3,7 +3,6 @@ package com.davidbeltran.mascotas;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import androidx.appcompat.widget.Toolbar;
@@ -15,11 +14,9 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 
-import com.davidbeltran.mascotas.adapter.MascotaAdaptador;
 import com.davidbeltran.mascotas.adapter.PageAdapter;
 import com.davidbeltran.mascotas.fragment.PerfilFragment;
 import com.davidbeltran.mascotas.fragment.RecyclerViewFragment;
-import com.davidbeltran.mascotas.pojo.Mascota;
 import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;

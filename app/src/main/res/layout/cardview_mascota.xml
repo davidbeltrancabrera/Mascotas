@@ -27,9 +27,9 @@
             android:layout_height="wrap_content">
 
             <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btnLike"
                 android:layout_width="@dimen/width"
                 android:layout_height="@dimen/height"
-                android:id="@+id/imghuesoblanco"
                 android:src="@drawable/huesonegro"
 
                 />

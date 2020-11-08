@@ -1,28 +1,21 @@
 package com.davidbeltran.mascotas.fragment;
 
-import android.graphics.Color;
 import android.os.Bundle;
 
-import androidx.appcompat.app.ActionBar;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.davidbeltran.mascotas.R;
-import com.davidbeltran.mascotas.adapter.MascotaAdaptador;
 import com.davidbeltran.mascotas.adapter.MascotaAdaptador2;
 import com.davidbeltran.mascotas.pojo.Mascota;
 
 import java.util.ArrayList;
-
-import android.graphics.drawable.ColorDrawable;
 
 public class PerfilFragment extends Fragment {
 

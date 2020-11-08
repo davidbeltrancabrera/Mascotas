@@ -1,6 +1,8 @@
 package com.davidbeltran.mascotas.pojo;
 
 public class Mascota {
+
+    private int id;
     private String nombre;
     private int foto;
     private int like;
@@ -15,6 +17,11 @@ public class Mascota {
         this.foto = foto;
         this.like = like;
     }
+
+    public Mascota() {
+
+    }
+
     public String getNombre() {
         return nombre;
     }
@@ -37,5 +44,13 @@ public class Mascota {
 
     public void setLike(int like) {
         this.like = like;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

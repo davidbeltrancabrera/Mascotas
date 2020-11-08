@@ -6,8 +6,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.davidbeltran.mascotas.pojo.Mascota;
 import com.davidbeltran.mascotas.R;
+import com.davidbeltran.mascotas.pojo.Mascota;
 
 import java.util.ArrayList;
 
